@@ -59,15 +59,15 @@ public class TopStoriesImpl implements ITopStoriesPresenter {
 
 
 
-     /*   retrofitCallbacks.getTopStories(Constants.NYC_API_KEY).enqueue(new Callback<TopNews>() {
+     /*   retrofitCallbacks.getTopStories(Constants.NYC_API_KEY).enqueue(new Callback<TopNewsData>() {
             @Override
-            public void onResponse(Call<TopNews> call, Response<TopNews> response) {
+            public void onResponse(Call<TopNewsData> call, Response<TopNewsData> response) {
 
                 System.out.println("onResponse Top story "+ response.body().getSection());
             }
 
             @Override
-            public void onFailure(Call<TopNews> call, Throwable t) {
+            public void onFailure(Call<TopNewsData> call, Throwable t) {
 
                 System.out.println("onResponse failure ");
 
@@ -79,6 +79,8 @@ public class TopStoriesImpl implements ITopStoriesPresenter {
     private void handleResults(TopNews topNews) {
 
         System.out.println("topnews "+topNews);
+
+        iTopNewsView.updateRecyclerView(topNews.getResults());
 
     }
 

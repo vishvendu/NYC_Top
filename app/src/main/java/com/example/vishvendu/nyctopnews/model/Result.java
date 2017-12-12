@@ -5,10 +5,12 @@ package com.example.vishvendu.nyctopnews.model;
  */
 
 import java.util.List;
+
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Result {
+public class Result{
 
     @SerializedName("section")
     @Expose
@@ -208,5 +210,6 @@ public class Result {
     public void setShortUrl(String shortUrl) {
         this.shortUrl = shortUrl;
     }
+
 
 }
